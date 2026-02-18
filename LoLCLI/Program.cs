@@ -1,6 +1,6 @@
 ﻿namespace LoLCLI
 {
-    internal class Program
+    public class Program
     {
         public class Hos
         {
@@ -123,6 +123,9 @@
             }
             //Console.WriteLine(szoveg);
             File.WriteAllText("teljes.txt", szoveg);
+
+            //7. feladat
+
         }
     }
 }
