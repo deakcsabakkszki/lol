@@ -36,11 +36,32 @@
                 this.attackdamage = double.Parse(adat[11]);
                 this.attackdamageperlevel = double.Parse(adat[12]);
                 this.attackspeedperlevel = double.Parse(adat[13]);
+            }            
+        }
+
+        public static List<Hos> hoslist = new List<Hos>();
+
+        public static double HpErtek(string hosNev, int hosSzint)
+        {
+            if (hosSzint > 18 || hosSzint < 1)
+            {
+                return -1;
+            }
+            else
+            {
+                Hos egyHos = hoslist.FirstOrDefault(h => h.name == hosNev);
+                if(egyHos == null)
+                {
+                    return -1;
+                }
+                else
+                {
+                    return egyHos.hp + hosSzint * egyHos.hpperlevel;
+                }
             }
         }
         static void Main(string[] args)
-        {
-            List<Hos> hoslist = new List<Hos>();
+        {            
             foreach (var h in File.ReadAllLines("champions2017.csv", System.Text.Encoding.UTF7).Skip(1))
             {
                 hoslist.Add(new Hos(h));
