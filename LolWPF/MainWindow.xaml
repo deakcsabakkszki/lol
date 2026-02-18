@@ -9,13 +9,15 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="1" x:Name="datagrid" />
-        <Button Content="Keresés" HorizontalAlignment="Left" Margin="214,0,0,0" VerticalAlignment="Center"/>
+        <ScrollViewer Grid.Row="1">
+            <DataGrid x:Name="datagrid"/>
+        </ScrollViewer>
+        <Button Content="Keresés" HorizontalAlignment="Left" Margin="214,0,0,0" VerticalAlignment="Center" Click="kereses"/>
         <Button Content="Mentés" HorizontalAlignment="Left" Margin="507,0,0,0" VerticalAlignment="Center"/>
-        <ComboBox HorizontalAlignment="Left" Margin="354,0,0,0" VerticalAlignment="Center" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Margin="71,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="120"/>
+        <ComboBox x:Name="combobox" HorizontalAlignment="Left" Margin="354,0,0,0" VerticalAlignment="Center" Width="120"/>
+        <TextBox x:Name="keresett"  HorizontalAlignment="Left" Margin="71,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="120"/>
     
     </Grid>
 </Window>

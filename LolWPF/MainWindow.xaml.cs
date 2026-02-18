@@ -65,9 +65,32 @@ namespace LolWPF
             }
             datagrid.ItemsSource = hoslist;
 
+            List<string> kategoriak = new List<string>();
+            foreach (var h in hoslist)
+            {
+                if (!kategoriak.Contains(h.category))
+                {
+                    kategoriak.Add(h.category);
+                    //Console.WriteLine(h.category);
+                }
+
+            }
+            combobox.ItemsSource = kategoriak;
+
            
         }
 
-        
+        private void kereses(object sender, RoutedEventArgs e)
+        {
+            List<Hos>talalat = new List<Hos>();
+            foreach (var h in hoslist)
+            {
+                if (h.name.Contains(keresett.Text))
+                {
+                    talalat.Add(h);
+                }
+            }
+            datagrid.ItemsSource=talalat;
+        }
     }
 }
