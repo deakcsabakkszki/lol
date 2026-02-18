@@ -85,6 +85,17 @@
                     }
                 }                
             }
+
+            //5. feladat
+            Hos legmagasabbHp = hoslist[0];
+            foreach (var hos in hoslist)
+            {
+                if (HpErtek(legmagasabbHp.name, 15) < HpErtek(hos.name, 15))
+                {
+                    legmagasabbHp = hos;
+                }
+            }
+            Console.WriteLine($"5. Feladat: 15. szinten a legmagasabb HP-vel rendelkező hős {legmagasabbHp.name}; HP={HpErtek(legmagasabbHp.name, 15)}");
         }
     }
 }
