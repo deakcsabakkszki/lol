@@ -96,6 +96,33 @@
                 }
             }
             Console.WriteLine($"5. Feladat: 15. szinten a legmagasabb HP-vel rendelkező hős {legmagasabbHp.name}; HP={HpErtek(legmagasabbHp.name, 15)}");
+
+            //6.feladat
+            List<string> kategoriak = new List<string>();
+            foreach (var h in hoslist)
+            {
+                if (!kategoriak.Contains(h.category))
+                {
+                    kategoriak.Add(h.category);
+                    //Console.WriteLine(h.category);
+                }
+                
+            }
+
+            string szoveg = "";
+            foreach (var k in kategoriak)
+            {
+                szoveg += k+"\n";
+                foreach (var h in hoslist)
+                {
+                    if (h.category == k)
+                    {
+                        szoveg += "\t"+h.name+"\n";
+                    }
+                }
+            }
+            //Console.WriteLine(szoveg);
+            File.WriteAllText("teljes.txt", szoveg);
         }
     }
 }
