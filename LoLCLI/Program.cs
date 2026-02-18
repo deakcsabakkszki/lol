@@ -41,12 +41,29 @@
         static void Main(string[] args)
         {
             List<Hos> hoslist = new List<Hos>();
-            foreach (var h in File.ReadAllLines("champions2017.csv",System.Text.Encoding.UTF7).Skip(1))
+            foreach (var h in File.ReadAllLines("champions2017.csv", System.Text.Encoding.UTF7).Skip(1))
             {
                 hoslist.Add(new Hos(h));
             }
             Console.WriteLine($"2. Feladat, hősök száma:{hoslist.Count()}");
             Console.WriteLine(hoslist[119].blurb);
+
+            //3.feladat
+            bool joABekertHos = false;
+            while (!joABekertHos)
+            {
+                Console.Write("Kérem egy hős nevét: ");
+                string bekertHos = Console.ReadLine().ToLower();
+
+                foreach (var h in hoslist)
+                {
+                    if (bekertHos == h.name.ToLower())
+                    {
+                        Console.WriteLine($"{h.name} adatai: HP: {h.hp}; Kategória: {h.category}");
+                        joABekertHos = true;
+                    }
+                }                
+            }
         }
     }
 }
