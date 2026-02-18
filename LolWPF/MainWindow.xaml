@@ -16,8 +16,8 @@
         </ScrollViewer>
         <Button Content="Keresés" HorizontalAlignment="Left" Margin="214,0,0,0" VerticalAlignment="Center" Click="kereses"/>
         <Button Content="Mentés" HorizontalAlignment="Left" Margin="507,0,0,0" VerticalAlignment="Center"/>
-        <ComboBox x:Name="combobox" HorizontalAlignment="Left" Margin="354,0,0,0" VerticalAlignment="Center" Width="120"/>
-        <TextBox x:Name="keresett"  HorizontalAlignment="Left" Margin="71,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="120"/>
+        <ComboBox x:Name="combobox" HorizontalAlignment="Left" Margin="354,0,0,0" VerticalAlignment="Center" Width="120" SelectionChanged="kategoriakiiras"/>
+        <TextBox x:Name="keresett"  HorizontalAlignment="Left" Margin="71,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120"/>
     
     </Grid>
 </Window>

@@ -77,6 +77,7 @@ namespace LolWPF
             }
             combobox.ItemsSource = kategoriak;
 
+
            
         }
 
@@ -91,6 +92,22 @@ namespace LolWPF
                 }
             }
             datagrid.ItemsSource=talalat;
+
+            keresett.Text = "";
+            combobox.Text = "";
+        }
+
+        private void kategoriakiiras(object sender, SelectionChangedEventArgs e)
+        {
+            List<Hos> talalat = new List<Hos>();
+            foreach (var h in hoslist)
+            {
+                if (h.category.Equals(combobox.SelectedItem))
+                {
+                    talalat.Add(h);
+                }
+            }
+            datagrid.ItemsSource = talalat;
         }
     }
 }
