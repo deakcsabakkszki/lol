@@ -27,7 +27,7 @@
                 this.category = adat[2];
                 this.tag = adat[3].Split(',');
                 this.blurb = adat[4];
-                this.hp = double.Parse( adat[5]);
+                this.hp = double.Parse(adat[5]);
                 this.hpperlevel = double.Parse(adat[6]);
                 this.movespeed = int.Parse(adat[7]);
                 this.armor = double.Parse(adat[8]);
@@ -40,7 +40,13 @@
         }
         static void Main(string[] args)
         {
-            
+            List<Hos> hoslist = new List<Hos>();
+            foreach (var h in File.ReadAllLines("champions2017.csv",System.Text.Encoding.UTF7).Skip(1))
+            {
+                hoslist.Add(new Hos(h));
+            }
+            Console.WriteLine($"2. Feladat, hősök száma:{hoslist.Count()}");
+            Console.WriteLine(hoslist[119].blurb);
         }
     }
 }
