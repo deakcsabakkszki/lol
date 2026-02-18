@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoLCLI", "LoLCLI\LoLCLI.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{475C7362-C925-4C26-B70B-C33DD7BF61C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LolWPF", "LolWPF\LolWPF.csproj", "{B7D58FDF-EEAF-43E5-94B4-5F99DCCE3952}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{475C7362-C925-4C26-B70B-C33DD7BF61C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{475C7362-C925-4C26-B70B-C33DD7BF61C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{475C7362-C925-4C26-B70B-C33DD7BF61C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7D58FDF-EEAF-43E5-94B4-5F99DCCE3952}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7D58FDF-EEAF-43E5-94B4-5F99DCCE3952}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7D58FDF-EEAF-43E5-94B4-5F99DCCE3952}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7D58FDF-EEAF-43E5-94B4-5F99DCCE3952}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
