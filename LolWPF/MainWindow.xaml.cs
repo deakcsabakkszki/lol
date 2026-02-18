@@ -80,10 +80,10 @@ namespace LolWPF
 
            
         }
-
+        string fajlNev = "";
+        List<Hos> talalat = new List<Hos>();
         private void kereses(object sender, RoutedEventArgs e)
         {
-            List<Hos>talalat = new List<Hos>();
             foreach (var h in hoslist)
             {
                 if (h.name.Contains(keresett.Text))
@@ -93,6 +93,7 @@ namespace LolWPF
             }
             datagrid.ItemsSource=talalat;
 
+            fajlNev = keresett.Text;
             keresett.Text = "";
             combobox.Text = "";
         }
@@ -108,6 +109,34 @@ namespace LolWPF
                 }
             }
             datagrid.ItemsSource = talalat;
+        }
+
+        private void mentes(object sender, RoutedEventArgs e)
+        {
+            if(fajlNev == "")
+            {
+                MessageBox.Show("Keress rá valamire először!");
+            }
+            else
+            {
+                string sorok = "";
+                foreach (var item in talalat)
+                {
+                    sorok += $"Név: {item.name}, \t HP={item.hp}\n";
+                }
+                //MessageBox.Show(sorok);
+                try
+                {
+                    File.WriteAllText(fajlNev+".txt", sorok);
+                    MessageBox.Show("Sikeres mentés!");
+                }
+                catch (Exception err)
+                {
+                    MessageBox.Show("Sikertelen mentés:\n" + err.Message);
+                }
+                
+                
+            }
         }
     }
 }
